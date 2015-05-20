@@ -1,0 +1,13 @@
+﻿@using AutomatedTellerMachine.Models
+@model IEnumerable<AutomatedTellerMachine.Models.GameInfo>
+@{
+    ViewBag.Title = "GameCatalogTemp";
+}
+
+@foreach (var item in Model)
+{
+        <div class="col-xs-3 catpad">
+            <a href='@Url.Action("Details", "GameInfoes", new {id = item.Id})'><img class="img-rounded img-responsive" src="@Html.DisplayFor(modelItem => item.InPageImage)" alt="@Html.DisplayFor(modelItem => item.Title)"></a>
+        </div>
+}
+<div class="clearfix"></div>
