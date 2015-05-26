@@ -166,6 +166,8 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CheckingAccountController.cs" />
+    <Compile Include="Controllers\CommentModelsController.cs" />
+    <Compile Include="Controllers\ForumModelsController.cs" />
     <Compile Include="Controllers\GameInfoesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NewsModelsController.cs" />
@@ -180,6 +182,8 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\CheckingAccount.cs" />
+    <Compile Include="Models\CommentModel.cs" />
+    <Compile Include="Models\ForumModel.cs" />
     <Compile Include="Models\GameInfo.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ImageModel.cs" />
@@ -313,6 +317,16 @@
     <Content Include="Views\NewsModels\NewsPageTemp.cshtml" />
     <Content Include="Views\CheckingAccount\Edit.cshtml" />
     <Content Include="Views\CheckingAccount\Delete.cshtml" />
+    <Content Include="Views\ForumModels\Create.cshtml" />
+    <Content Include="Views\ForumModels\Delete.cshtml" />
+    <Content Include="Views\ForumModels\Details.cshtml" />
+    <Content Include="Views\ForumModels\Edit.cshtml" />
+    <Content Include="Views\ForumModels\Index.cshtml" />
+    <Content Include="Views\CommentModels\Create.cshtml" />
+    <Content Include="Views\CommentModels\Delete.cshtml" />
+    <Content Include="Views\CommentModels\Details.cshtml" />
+    <Content Include="Views\CommentModels\Edit.cshtml" />
+    <Content Include="Views\CommentModels\Index.cshtml" />
     <None Include="Web.Test.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

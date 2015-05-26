@@ -1,0 +1,55 @@
+﻿
+@model System.Collections.Generic.IEnumerable<AutomatedTellerMachine.Models.ForumModel>
+
+@{
+    ViewBag.Title = "Welcome on Project Aurora's Forum";
+}
+
+<h2>@ViewBag.Title</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Question)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.UserName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <a href='@Url.Action("Index", "CommentModels", new {id = item.Id})'>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Question)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.UserName)
+            </td>
+            @if (item.ApplicationUserId.ToString() == @ViewBag.AppUserId)
+            {
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new {id = item.Id}) |
+                    @Html.ActionLink("Delete", "Delete", new {id = item.Id})
+                </td>
+            }
+        </tr>
+        
+        }
+
+</table>
+
+
+<a href='@Url.Action("Create", "ForumModels")' class="glyphicon glyphicon-plus"title="Create new Forum entry"></a>
+
+   

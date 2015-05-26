@@ -11,9 +11,10 @@ namespace AutomatedTellerMachine.Models
     public interface IApplicationDbContext
     {
          IDbSet<CheckingAccount> CheckingAccounts { get; set; }
-         DbSet<GameInfo> GamesInfos { get; set; }
-         DbSet<NewsModel> NewsModels { get; set; }
-       //  DbSet<ApplicationUser> ApplicationUsers { get; set; }
+         IDbSet<GameInfo> GamesInfos { get; set; }
+         IDbSet<NewsModel> NewsModels { get; set; }
+       
+
 
         int SaveChanges();
     }
@@ -37,9 +38,15 @@ namespace AutomatedTellerMachine.Models
         }
 
         public IDbSet<CheckingAccount> CheckingAccounts { get; set; }
-        public DbSet<GameInfo> GamesInfos { get; set; }
-        public DbSet<NewsModel> NewsModels { get; set; }
-       // public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+        public IDbSet<GameInfo> GamesInfos { get; set; }
+        public IDbSet<NewsModel> NewsModels { get; set; }
+
+        public IDbSet<ForumModel> ForumModels { get; set; }
+
+        public IDbSet<CommentModel> CommentModels { get; set; }
+
+      //  public System.Data.Entity.DbSet<AutomatedTellerMachine.Models.ApplicationUser> ApplicationUsers { get; set; }
+
     }
 
 }

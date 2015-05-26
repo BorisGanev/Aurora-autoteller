@@ -11,6 +11,7 @@
     <ProjectView>ProjectFiles</ProjectView>
     <WebStackScaffolding_DbContextTypeFullName>AutomatedTellerMachine.Models.ApplicationDbContext</WebStackScaffolding_DbContextTypeFullName>
     <NameOfLastUsedPublishProfile>atmtest21</NameOfLastUsedPublishProfile>
+    <WebStackScaffolding_IsViewGenerationSelected>True</WebStackScaffolding_IsViewGenerationSelected>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>
