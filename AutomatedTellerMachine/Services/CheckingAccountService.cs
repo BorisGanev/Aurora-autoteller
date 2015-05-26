@@ -19,9 +19,9 @@ namespace AutomatedTellerMachine.Services
         {     
             var checkingAccount = new CheckingAccount
             {
-                FirstName = firstName, LastName = lastName, ApplicationUserId = userId, Nickname = nickname, Email = email, 
-                Dob = dob
+                FirstName = firstName, LastName = lastName, ApplicationUserId = userId, Nickname = nickname, Email = email, Dob = dob
             };
+           
             db.CheckingAccounts.Add(checkingAccount);
             db.SaveChanges();
         }

@@ -10,4 +10,9 @@
             <a href='@Url.Action("Details", "GameInfoes", new {id = item.Id})'><img class="img-rounded img-responsive" src="@Html.DisplayFor(modelItem => item.InPageImage)" alt="@Html.DisplayFor(modelItem => item.Title)"></a>
         </div>
 }
+
+@if (User.IsInRole("Admin"))
+{
+    <a href='@Url.Action("Index", "GameInfoes")' class="glyphicon glyphicon-plus" title="Manage Review entries"></a>
+}
 <div class="clearfix"></div>

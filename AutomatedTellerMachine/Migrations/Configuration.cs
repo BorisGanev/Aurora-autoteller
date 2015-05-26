@@ -25,7 +25,7 @@ namespace AutomatedTellerMachine.Migrations
 
             if (!context.Users.Any(u => u.UserName == "admin@mvcatm.com"))
             {
-                var user = new ApplicationUser { UserName = "admin@mvcatm.com", Email = "admin@mvcatm.com" };
+                var user = new ApplicationUser { UserName = "admin", Email = "admin@mvcatm.com" };
                 IdentityResult result = userManager.Create(user, "Passw0rd!");
 
                 var service = new CheckingAccountService(context);
