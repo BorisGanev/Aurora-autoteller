@@ -8,47 +8,7 @@
 
 <h2>@ViewBag.Title</h2>
 
-@*
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Question)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.User.UserName)
-            </th>
-            <th></th>
-        </tr>
 
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    <a href='@Url.Action("Index", "CommentModels", new {id = item.Id})'>
-                        @Html.DisplayFor(modelItem => item.Title)
-                    </a>
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Question)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.User.UserName)
-                </td>
-                @if (item.ApplicationUserId.ToString() == @ViewBag.AppUserId)
-                {
-                    <td>
-                        @Html.ActionLink("Edit", "Edit", new {id = item.Id}) |
-                        @Html.ActionLink("Delete", "Delete", new {id = item.Id})
-                    </td>
-                }
-            </tr>
-
-        }
-
-    </table>*@
 
 <script>
     var AppId = '@(ViewBag.AppUserId)';
@@ -64,9 +24,11 @@
                 @Html.DisplayNameFor(model => model.Question)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.User.UserName)
+                @Html.DisplayNameFor(model => model.User.Email)
             </th>
-            <th></th>
+            <th>
+                Modify
+            </th>
         </tr>
     </thead>
     <tbody data-bind="foreach:currentTransactions">
@@ -111,6 +73,10 @@
         self.currentTransactions = ko.computed(function(){
             var startIndex = (self.currentPage() - 1) * self.pageSize;
             var endIndex = startIndex + self.pageSize;
+            self.transactions.sort(function(left, right) 
+            { return left.Title === right.Title ? 0 : (left.Title < right.Title ? -1 : 1) }
+            );
+
             return self.transactions.slice(startIndex, endIndex);
         });
 
