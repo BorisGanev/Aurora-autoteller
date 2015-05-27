@@ -1,10 +1,11 @@
-﻿@using AutomatedTellerMachine.Models
-@model IEnumerable<AutomatedTellerMachine.Models.GameInfo>
+﻿@using System.Linq
+@using AutomatedTellerMachine.Models
+@model System.Collections.Generic.IEnumerable<AutomatedTellerMachine.Models.GameInfo>
 @{
     ViewBag.Title = "GameCatalogTemp";
 }
 
-@foreach (var item in Model)
+@foreach (var item in Model.Reverse())
 {
         <div class="col-xs-3 catpad">
             <a href='@Url.Action("Details", "GameInfoes", new {id = item.Id})'><img class="img-rounded img-responsive" src="@Html.DisplayFor(modelItem => item.InPageImage)" alt="@Html.DisplayFor(modelItem => item.Title)"></a>
